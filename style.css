@@ -19,3 +19,14 @@
 .menu-custom a.item {
   font-size: 1.3rem !important;
 }
+
+/* index.html */
+
+.cards > .card {
+  width: initial !important;
+}
+
+.cards > .card > div.image {
+  width: 120px;
+  height: 120px;
+}
