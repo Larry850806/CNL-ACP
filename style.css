@@ -4,13 +4,14 @@
   flex-direction: row;
 }
 .content {
-  margin: 45px 40px;
+  margin: 45px 40px 0;
   flex: 1 1 auto;
 }
 .menu-custom {
   height: 100vh;
   border-radius: 0 !important;
   width: 18rem !important;
+  margin-bottom: 0 !important;
 }
 .menu-custom > h2 {
   font-size: 2.1rem;
