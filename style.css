@@ -28,7 +28,7 @@
 }
 
 .cards > .card.active {
-  background-color: #c0c1c2;
+  background-color: #ccddff;
   background-image: none;
   -webkit-box-shadow: 0 0 0 1px transparent inset;
   box-shadow: 0 0 0 1px transparent inset;
