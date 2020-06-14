@@ -107,3 +107,7 @@ div.avatar > img {
 div.avatar > .name {
   text-align: center;
 }
+
+table#usage {
+  width: 700px;
+}
