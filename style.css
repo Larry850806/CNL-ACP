@@ -1,7 +1,11 @@
 /* Common Part */
+.flex {
+  display: flex;
+}
 .full {
   display: flex;
   flex-direction: row;
+  padding-left: 18rem;
 }
 .content {
   margin: 45px 40px 0;
@@ -12,6 +16,9 @@
   border-radius: 0 !important;
   width: 18rem !important;
   margin-bottom: 0 !important;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 .menu-custom > h2 {
   font-size: 2.1rem;
@@ -53,4 +60,50 @@ button > i {
   height: 24px !important;
   left: 6px !important;
   top: 6px !important;
+}
+
+/* usage page */
+
+.segment {
+  padding: 20px 1em !important;
+}
+
+.segment > .progress {
+  display: flex;
+  margin-bottom: 55px !important;
+}
+
+.segment > .progress:last-child {
+  display: flex;
+  margin-bottom: 0 !important;
+}
+
+.bar > .progress {
+  right: -32px !important;
+  color: #000 !important;
+}
+
+div.avatars {
+  display: flex;
+  flex-direction: column;
+  padding-top: 22px;
+  margin-right: 10px;
+}
+
+div.avatar {
+  /* width: 0px; */
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.avatar > img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+}
+
+div.avatar > .name {
+  text-align: center;
 }
