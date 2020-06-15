@@ -111,3 +111,9 @@ div.avatar > .name {
 table#usage {
   width: 700px;
 }
+
+/* pay page */
+
+table#pay {
+  width: 600px;
+}
