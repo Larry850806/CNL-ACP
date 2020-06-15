@@ -1,5 +1,14 @@
 let selectedUser = null
 
+function initInputStatus() {
+  alert('正在抓取 server 蒐集到的時間')
+  let inputValues = [true, false, true, true] // get from api
+  for (i in inputValues) {
+    let selector = `input:nth(${i})`
+    $(selector).prop('checked', inputValues[i])
+  }
+}
+
 function handleUserSelect(idx) {
   selectedUser = idx
   for (let i = 0; i < 4; i++) {
@@ -10,6 +19,7 @@ function handleUserSelect(idx) {
       $(selector).removeClass('active')
     }
   }
+  initInputStatus()
 }
 
 for (let i = 0; i < 4; i++) {
