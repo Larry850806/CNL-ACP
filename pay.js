@@ -1,12 +1,18 @@
 const getBalanceSel = (idx) => `tbody td:nth(${idx + 1})`
+const getNameSel = (idx) => `thead th:nth(${idx + 1})`
 
-function initBalance() {
-  alert('正在抓取 server 餘額')
-  let inputValues = [-150, 100, 70, 80] // get from api
-  for (i in inputValues) {
-    let selector = getBalanceSel(i)
-    $(selector).text(inputValues[i])
-  }
-}
+// init username and balance
+axios('http://140.112.225.211:8888/usage').then(({ data }) => {
+  data = data[0]
+  console.log(data)
 
-initBalance()
+  let usernames = Object.keys(data)
+  console.log(usernames)
+
+  usernames.map((name, idx) => {
+    let balance = data[name]
+
+    $(getNameSel(idx)).text(name)
+    $(getBalanceSel(idx)).text(balance)
+  })
+})

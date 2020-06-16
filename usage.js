@@ -16,14 +16,4 @@ axios('http://140.112.225.211:8888/usage').then(({ data }) => {
     $(getRatioSel(idx)).text(ratio)
     $(getBarSel(idx)).css('width', ratio)
   })
-
-  //   times = Object.keys(data)
-  //   inputValues = times.map((t) => data[t])
-  //   let usernames = Object.keys(inputValues[0])
-
-  //   // set usernames
-  //   // console.log(usernames)
-  //   for (let i = 0; i < 4; i++) {
-  //     $(getCardNameSel(i)).text(usernames[i])
-  //   }
 })
