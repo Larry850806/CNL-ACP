@@ -57,15 +57,16 @@ $('#submit').click(() => {
 
   let form = new FormData()
 
+  const bool2num = (b) => (b ? 1 : 0)
   form.set('user', name)
   form.set('recordtime0', times[0])
   form.set('recordtime6', times[1])
   form.set('recordtime12', times[2])
   form.set('recordtime18', times[3])
-  form.set('exist0', values[0].toString())
-  form.set('exist6', values[1])
-  form.set('exist12', values[2])
-  form.set('exist18', values[3])
+  form.set('exist0', bool2num(values[0]))
+  form.set('exist6', bool2num(values[1]))
+  form.set('exist12', bool2num(values[2]))
+  form.set('exist18', bool2num(values[3]))
 
   console.log(form)
 
