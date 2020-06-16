@@ -7,6 +7,11 @@ let inputValues = null
 
 let selectedUser = null
 
+for (let i = 0; i < 4; i++) {
+  $(getCardSel(i)).removeClass('active')
+  $(getInputSel(i)).prop('checked', false)
+}
+
 function initInputStatus() {
   // console.log(inputValues)
   let name = $(getCardNameSel(selectedUser)).text()
@@ -78,6 +83,7 @@ $('#submit').click(() => {
   })
     .then(() => {
       alert('送出成功')
+      location.reload()
     })
     .catch((err) => {
       console.error(err)
