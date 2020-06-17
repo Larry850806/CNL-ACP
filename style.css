@@ -8,7 +8,7 @@
   padding-left: 18rem;
 }
 .content {
-  margin: 45px 40px 0;
+  margin: 20px 40px 0;
   flex: 1 1 auto;
 }
 .menu-custom {
@@ -33,6 +33,10 @@
 
 /* index.html */
 
+h3.ui.dividing {
+  margin-top: 13px;
+  margin-bottom: 8px;
+}
 .cards > .card {
   width: initial !important;
   cursor: pointer;
