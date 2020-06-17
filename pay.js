@@ -18,8 +18,11 @@ axios('http://140.112.225.211:8888/usage').then(({ data }) => {
   $(getSplitTimeSel()).text(splitTime)
   usernames.map((name, idx) => {
     let balance = data[name]
-    $(getNameSel(idx)).text(name)
     $(getBalanceSel(idx)).text(balance)
+    if (name == 'admin') {
+      name = '冷氣卡'
+    }
+    $(getNameSel(idx)).text(name)
     $(getDrop1ItemSel(idx)).text(name)
     $(getDrop2ItemSel(idx)).text(name)
   })
@@ -45,6 +48,13 @@ function handlePayClick() {
   let payer = $('#payer-dropdown .text').text()
   let payee = $('#payee-dropdown .text').text()
   let amount = +$('input[name=amount]').val()
+
+  if (payer == '冷氣卡') {
+    payer = 'admin'
+  }
+  if (payee == '冷氣卡') {
+    payee = 'admin'
+  }
 
   console.log({ payer, payee, amount })
   if (payer == '轉出帳號') {
