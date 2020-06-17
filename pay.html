@@ -29,7 +29,7 @@
       </div>
 
       <div class="content">
-        <h1 class="ui dividing header">金錢流</h1>
+        <h1 class="ui dividing header">目前餘額</h1>
 
         <table id="pay" class="ui definition celled table">
           <thead>
@@ -62,10 +62,51 @@
           分帳
         </button>
 
-        <!-- <button id="pay" class="ui labeled icon button">
+        <h1 class="ui dividing header">轉帳</h1>
+
+        <form class="ui form">
+          <div class="fields">
+            <div class="field">
+              <label>轉出帳號</label>
+              <div id="payer-dropdown" class="ui selection dropdown" tabindex="0">
+                <input type="hidden" name="payer" />
+                <i class="dropdown icon"></i>
+                <div class="default text">轉出帳號</div>
+                <div class="menu transition hidden" tabindex="-1">
+                  <div class="item" data-value="0">0</div>
+                  <div class="item" data-value="1">1</div>
+                  <div class="item" data-value="2">2</div>
+                  <div class="item" data-value="3">3</div>
+                  <div class="item" data-value="4">4</div>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label>轉入帳號</label>
+              <div id="payee-dropdown" class="ui selection dropdown" tabindex="0">
+                <input type="hidden" name="payee" />
+                <i class="dropdown icon"></i>
+                <div class="default text">轉入帳號</div>
+                <div class="menu transition hidden" tabindex="-1">
+                  <div class="item" data-value="0">0</div>
+                  <div class="item" data-value="1">1</div>
+                  <div class="item" data-value="2">2</div>
+                  <div class="item" data-value="3">3</div>
+                  <div class="item" data-value="4">4</div>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label>金額</label>
+              <input type="text" name="amount" placeholder="金額" />
+            </div>
+          </div>
+        </form>
+
+        <button id="pay" class="ui labeled icon button">
           <i class="money bill alternate icon"></i>
-          乖乖牌轉 100 元給空氣人
-        </button> -->
+          轉帳
+        </button>
       </div>
     </div>
     <script src="pay.js"></script>

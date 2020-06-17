@@ -1,6 +1,10 @@
 const getBalanceSel = (idx) => `tbody td:nth(${idx + 1})`
 const getNameSel = (idx) => `thead th:nth(${idx + 1})`
 const getSplitTimeSel = () => `#last-split-time > span`
+const getDrop1ItemSel = (idx) => `#payer-dropdown .menu > .item:nth(${idx})`
+const getDrop2ItemSel = (idx) => `#payee-dropdown .menu > .item:nth(${idx})`
+
+$('input[type=hidden]').val('')
 
 // init username and balance
 axios('http://140.112.225.211:8888/usage').then(({ data }) => {
@@ -15,6 +19,8 @@ axios('http://140.112.225.211:8888/usage').then(({ data }) => {
     let balance = data[name]
     $(getNameSel(idx)).text(name)
     $(getBalanceSel(idx)).text(balance)
+    $(getDrop1ItemSel(idx)).text(name)
+    $(getDrop2ItemSel(idx)).text(name)
   })
 })
 
@@ -62,3 +68,5 @@ function handlePayClick() {
 
 $('button#split').click(handleSplitClick)
 $('button#pay').click(handlePayClick)
+
+$('.dropdown').dropdown()
