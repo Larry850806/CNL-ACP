@@ -125,3 +125,9 @@ table#usage {
 table#pay {
   width: 600px;
 }
+
+/* signup page */
+
+button.submit {
+  margin-top: 26px !important;
+}
