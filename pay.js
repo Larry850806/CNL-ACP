@@ -1,14 +1,16 @@
 const getBalanceSel = (idx) => `tbody td:nth(${idx + 1})`
 const getNameSel = (idx) => `thead th:nth(${idx + 1})`
+const getSplitTimeSel = () => `#last-split-time > span`
 
 // init username and balance
 axios('http://140.112.225.211:8888/usage').then(({ data }) => {
+  console.log(data)
+  let splitTime = data[2]
   data = data[0]
-  // console.log(data)
 
   let usernames = Object.keys(data)
-  // console.log(usernames)
 
+  $(getSplitTimeSel()).text(splitTime)
   usernames.map((name, idx) => {
     let balance = data[name]
     $(getNameSel(idx)).text(name)
@@ -22,6 +24,8 @@ function handleSplitClick() {
     .post('http://140.112.225.211:8888/split')
     .then(({ data }) => {
       console.log(data)
+      alert('分帳成功')
+      location.reload()
     })
     .catch((err) => {
       console.error(err)
@@ -46,9 +50,10 @@ function handlePayClick() {
     data: form,
     headers: { 'Content-Type': 'multipart/form-data' },
   })
-    .then(() => {
+    .then((data) => {
       alert('送出成功')
-      location.reload()
+      console.log(data)
+      // location.reload()
     })
     .catch((err) => {
       console.error(err)
