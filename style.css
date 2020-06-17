@@ -27,6 +27,10 @@
   font-size: 1.3rem !important;
 }
 
+#last-split-time {
+  margin-top: 20px !important;
+}
+
 /* index.html */
 
 .cards > .card {
