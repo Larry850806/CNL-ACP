@@ -36,6 +36,8 @@ function handleSplitClick() {
     })
     .catch((err) => {
       console.error(err)
+      alert(err)
+      location.reload()
     })
 }
 
@@ -83,6 +85,8 @@ function handlePayClick() {
     })
     .catch((err) => {
       console.error(err)
+      alert(err)
+      location.reload()
     })
 }
 
